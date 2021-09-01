@@ -20,5 +20,11 @@ Repositório de código para a live sobre o Amazon Textract da Digital Innovatio
 ### Criando o Lambda Trigger do Amazon S3
 
 - AWS Lambda Dashboard -> Create function -> Selecionar ```Use a blueprint``` e pesquisar pelo template ```s3-get-object-python```.
-- Inserir o nome da função -> Role name ->  em ```Bucket name``` selecionar o bucket criado anteriormente -> adicionar o sufixo ```.png``` para restringir o tipo dos arquivos que poderão ser processados.
+- Inserir o nome da função -> Role name ->  em ```Bucket name``` selecionar o bucket criado anteriormente -> adicionar o sufixo ```.png``` para restringir o tipo dos arquivos que poderão ser processados -> Create function.
 - Inserir o código que está na pasta ```src``` deste projeto. Este código irá enviar o arquivo recebido pelo Amazon S3 ao Textract e escrever a resposta em um arquivo .txt com o mesmo nome do arquivo enviado.
+
+### Configurar permissões do IAM para o S3 e o Textract
+
+- Selecionar a função criada -> Configuration -> selecionar a role criada -> Attach policies ->  ```AmazonTextractFullAccess``` e ```AmazonS3FullAccess``` -> Attach Policy
+
+### Adicionando um Lambda Layer personalizado
