@@ -28,3 +28,10 @@ Repositório de código para a live sobre o Amazon Textract da Digital Innovatio
 - Selecionar a função criada -> Configuration -> selecionar a role criada -> Attach policies ->  ```AmazonTextractFullAccess``` e ```AmazonS3FullAccess``` -> Attach Policy
 
 ### Adicionando um Lambda Layer personalizado
+
+- Baixar o arquivo .zip na pasta ```src``` -> AWS Lambda -> Layers -> Create layer -> inserir um nome -> Upload a .zip file -> Runtimes Python 3.6 3.7 3.8 3.9 -> Create
+- Selecionar a função criada -> Layers -> Add Layer e adicionar o layer boto3 criado anteriormente
+
+### Testando a aplicação
+
+- Realizar o upload de imagens de exemplo da pasta ```img``` e verificar os resultados no bucket S3 criado anteriormente.
